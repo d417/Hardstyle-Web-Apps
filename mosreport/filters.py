@@ -8,24 +8,18 @@ class MyOrderingFilter(filters.OrderingFilter):
 
 
 class ItemFilter(FilterSet):
-
+    mon = filters.ChoiceFilter(label='提出月', lookup_expr='contains')
     name = filters.CharFilter(label='氏名', lookup_expr='contains')
-    memo = filters.CharFilter(label='備考', lookup_expr='contains')
 
     order_by = MyOrderingFilter(
         # tuple-mapping retains order
         fields=(
-            ('name', 'name'),
-            ('locale', 'locale'),
+            ('mon', '提出月'),
+            ('name', '氏名'),            
         ),
         field_labels={
+            'mon': '提出年月',
             'name': '氏名',
-            'locale': '顧客名/作業場所',
         },
         label='並び順'
     )
-
-    class Meta:
-
-        model = Item
-        fields = ('name', 'locale', 'projectstatus',)

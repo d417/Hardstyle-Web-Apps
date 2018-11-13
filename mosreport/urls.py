@@ -1,6 +1,11 @@
+from django.contrib import admin
 from django.urls import path
 from .views import ItemFilterView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView
 
+# 追加
+admin.site.site_title = 'Hardstyle Web Apps' 
+admin.site.site_header = 'Hardstyle Web Apps(仮)' 
+admin.site.index_title = 'メニュー'
 
 urlpatterns = [
     # 一覧画面

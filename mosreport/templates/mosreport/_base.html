@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">HardstyleReport</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'index' %}">HardstyleReport</a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false"
             aria-label="ナビゲーションの切替">
             <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,13 @@
         <div class="collapse navbar-collapse" id="Navber">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin">管理サイト</a>
+                    <a class="nav-link" href="{% url 'create' %}">新規作成</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin/logout">ログアウト</a>
+                    <a class="nav-link" href="/admin/">管理画面</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="/admin/logout">ログアウト</a>
                 </li>
             </ul>
         </div>
